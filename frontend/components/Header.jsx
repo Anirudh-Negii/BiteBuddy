@@ -1,18 +1,33 @@
 import { Show, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Refrigerator, Cookie } from "lucide-react";
+import UserDropdown from "./UserDropdown";
 
-const Header = () => {
+const Header = async() => {
+  const user = null; // Replace with actual user authentication state
   return (
     <header className="fixed top-0 w-full border-b border-stone-200 bg-stone-50/80 backdrop-blur-md z-50 supports-backdrop-filter:bg-stone-50/60">
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
-        Logo
-        <div>NavLinks</div>
+        <Link href={user ? "/dashboard" : "/"} className="flex items-center space-x-2">
+          <Image src="/logo.png" alt="BiteBuddy Logo" width={80} height={60} className="w-16" />
+        </Link>
+        <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-stone-600">
+          <Link href="/recipe" className="hover:text-orange-600 transition-colors flex gap-1.5 items-center" >
+          <Cookie className="w-4 h-4" />My Recipes
+          </Link>
+          <Link href="/pantry" className="hover:text-orange-600 transition-colors flex gap-1.5 items-center" >
+          <Refrigerator className="w-4 h-4" />My Pantry
+          </Link>
+        </div>
 
         <div className="flex items-center space-x-4">
 
         <Show when="signed-in">
-          <UserButton />
+          {/* have to add a how to cook button here */}
+          <UserDropdown />
         </Show>
         <Show when="signed-out">
           <SignInButton mode="modal">

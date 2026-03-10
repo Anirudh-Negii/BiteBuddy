@@ -1,4 +1,7 @@
 import React from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import { Card, CardHeader, CardTitle } from '@/components/ui/card'
 
 const RecipeCard = ({ recipe, variant='default'}) => {
 
@@ -8,7 +11,7 @@ const RecipeCard = ({ recipe, variant='default'}) => {
             return {
                 title: recipe.strMeal,
                 image: recipe.strMealThumb,
-                href: `/recipe?cook=${encodeURIcomponent(recipe.strMeal)}`,
+                href: `/recipe?cook=${encodeURIComponent(recipe.strMeal)}`,
                 showImage: true
             };
         }

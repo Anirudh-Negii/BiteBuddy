@@ -149,14 +149,14 @@ export async function saveToPantry(formData) {
           data: {
             name: ingredient.name,
             quantity: ingredient.quantity,
-            imageUrl: "",
-            owner: user.id,
+            imageUrl: "", 
+            owner: user.id, 
           },
         }),
       });
 
       if (response.ok) {
-        const data = await response.json();
+        const data = await response.json(); 
         savedItems.push(data.data);
       }
     }
@@ -164,7 +164,7 @@ export async function saveToPantry(formData) {
     return {
       success: true,
       savedItems,
-      message: `Saved ${savedItems.length} items to your pantry!`,
+      message: `Saved ${savedItems.length} items to your pantry!`, 
     };
   } catch (error) {
     console.error("Error saving to pantry:", error);

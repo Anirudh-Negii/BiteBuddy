@@ -6,7 +6,7 @@ export const aj = arcjet({
   rules: [
     // Shield WAF - protect against common attacks
     shield({
-      mode: "LIVE", // Use "DRY_RUN" during development to test
+      mode: "LIVE", // Block malicious traffic in production
     }),
 
     // Bot protection - allow search engines only

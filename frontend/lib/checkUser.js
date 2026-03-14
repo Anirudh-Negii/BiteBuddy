@@ -41,7 +41,7 @@ export const checkUser = async () => {
         if(existingUserData.length > 0) {
             const existingUser = existingUserData[0];
 
-            if(existingUser.subscriptionTier !== subscriptionTier) {
+            if(existingUser.subscriptionTier?.toLowerCase() !== subscriptionTier?.toLowerCase()) {
                 await fetch(`${STRAPI_URL}/api/users/${existingUser.id}`, {
                     method: 'PUT',
                     headers: {

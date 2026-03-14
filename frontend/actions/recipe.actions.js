@@ -21,7 +21,7 @@ export async function getRecipesByPantryIngredients() {
     }
 
     // Check if user is Pro
-    const isPro = user.subscriptionTier === "pro";
+    const isPro = user.subscriptionTier?.toLowerCase() === "pro";
 
     // Apply Arcjet rate limit based on tier
     const arcjetClient = isPro ? proTierLimit : freeMealRecommendations;

@@ -7,7 +7,7 @@ import PricingSection from './PricingSection';
 const PricingModal = ({children, subscriptionTier}) => {
 
     const [isOpen, setIsOpen] = React.useState(false);
-    const canOpen = subscriptionTier === 'free'
+    const canOpen = subscriptionTier?.toLowerCase() === 'free'
 
     return (
         <Dialog isOpen={isOpen} onOpenChange={canOpen ? setIsOpen : undefined}>

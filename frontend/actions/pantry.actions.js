@@ -21,7 +21,7 @@ export async function scanPantryImage(formData) {
     }
 
     // Check if user is Pro
-    const isPro = user.subscriptionTier === "pro";
+    const isPro = user.subscriptionTier?.toLowerCase() === "pro";
 
     // Apply Arcjet rate limit based on tier
     const arcjetClient = isPro ? proTierLimit : freePantryScans;
@@ -246,7 +246,7 @@ export async function getPantryItems() {
 
     const data = await response.json();
 
-    const isPro = user.subscriptionTier === "pro";
+    const isPro = user.subscriptionTier?.toLowerCase() === "pro";
 
     return {
       success: true,

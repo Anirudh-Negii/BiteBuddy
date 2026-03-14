@@ -469,7 +469,7 @@ function RecipeContent() {
                       {step.tip && (
                         <div className="bg-orange-50 border-l-4 border-orange-600 p-4">
                           <p className="text-sm text-orange-900 flex items-start gap-2">
-                            <Lightbulb className="w-4 h-4 mt-0.5 flex-shrink-0 fill-orange-600" />
+                            <Lightbulb className="w-4 h-4 mt-0.5 shrink-0 fill-orange-600" />
                             <span>
                               <strong className="font-bold">Pro Tip:</strong>{" "}
                               {step.tip}
@@ -483,9 +483,9 @@ function RecipeContent() {
               </div>
 
               {/* Completion Message */}
-              <div className="mt-8 p-6 bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200">
+              <div className="mt-8 p-6 bg-linear-to-br from-green-50 to-emerald-50 border-2 border-green-200">
                 <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-6 h-6 text-green-600 shrink-0 mt-0.5" />
                   <div>
                     <h3 className="font-bold text-green-900 mb-1">
                       You&apos;re all done!
@@ -501,7 +501,7 @@ function RecipeContent() {
 
             {/* General Tips */}
             {recipe.tips && recipe.tips.length > 0 && (
-              <div className="bg-gradient-to-br from-orange-50 to-amber-50 p-8 border-2 border-orange-200">
+              <div className="bg-linear-to-br from-orange-50 to-amber-50 p-8 border-2 border-orange-200">
                 <h2 className="text-2xl font-bold text-stone-900 mb-4 flex items-center gap-2">
                   <Lightbulb className="w-6 h-6 text-orange-600 fill-orange-600" />
                   Chef&apos;s Tips & Tricks
@@ -523,7 +523,7 @@ function RecipeContent() {
                         key={i}
                         className="flex items-start gap-3 text-stone-700"
                       >
-                        <CheckCircle2 className="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" />
                         <span className="font-light">{tip}</span>
                       </li>
                     ))}

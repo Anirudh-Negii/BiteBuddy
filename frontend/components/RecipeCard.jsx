@@ -114,7 +114,7 @@ const RecipeCard = ({ recipe, variant='default'}) => {
                                         : data.matchPercentage >= 75
                                         ? 'bg-orange-600'
                                         : 'bg-stone-600'
-                                    } text-white text-lg py-3 py-1`}
+                                    } text-white text-lg px-3 py-1`}
                                 >
                                     {data.matchPercentage}%
                                 </Badge>

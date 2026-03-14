@@ -3,10 +3,11 @@
 
 import { useEffect, useState, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
+import { useAuth } from "@clerk/nextjs";
 import {
   ArrowLeft,
   Clock,
-  Users,
+  Users,  
   ChefHat,
   Flame,
   Lightbulb,
@@ -36,6 +37,9 @@ import ProLockedSection from "@/components/ProLockedSection";
 function RecipeContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
+  const { has } = useAuth();
+  const user = { plan: has?.({ plan: "pro" }) ? "Pro" : "Free" };
+  const isProUser = user?.plan === "Pro";
   const recipeName = searchParams.get("cook");
 
   const [recipe, setRecipe] = useState(null);
@@ -381,7 +385,7 @@ function RecipeContent() {
                 <div className="mt-6 pt-6 border-t-2 border-stone-200">
                   <h3 className="font-bold text-stone-900 mb-3 uppercase tracking-wide text-sm flex items-center gap-2">
                     Nutrition (per serving)
-                    {!recipeData.isPro && (
+                    {!isProUser && (
                       <span className="text-xs bg-orange-100 text-orange-700 px-2 py-0.5 rounded-full font-semibold">
                         PRO
                       </span>
@@ -389,7 +393,7 @@ function RecipeContent() {
                   </h3>
 
                   <ProLockedSection
-                    isPro={recipeData.isPro}
+                    isPro={isProUser}
                     lockText="Nutrition info is Pro-only"
                   >
                     <div className="grid grid-cols-2 gap-3">
@@ -505,7 +509,7 @@ function RecipeContent() {
                 <h2 className="text-2xl font-bold text-stone-900 mb-4 flex items-center gap-2">
                   <Lightbulb className="w-6 h-6 text-orange-600 fill-orange-600" />
                   Chef&apos;s Tips & Tricks
-                  {!recipeData.isPro && (
+                  {!isProUser && (
                     <span className="text-xs bg-orange-100 text-orange-700 px-2 py-0.5 rounded-full font-semibold">
                       PRO
                     </span>
@@ -513,7 +517,7 @@ function RecipeContent() {
                 </h2>
 
                 <ProLockedSection
-                  isPro={recipeData.isPro}
+                  isPro={isProUser}
                   lockText="Chef tips are Pro-only"
                   ctaText="Unlock Pro Tips →"
                 >
@@ -537,7 +541,7 @@ function RecipeContent() {
               <div className="bg-white p-8 border-2 border-stone-200">
                 <h2 className="text-2xl font-bold text-stone-900 mb-4 flex items-center gap-2">
                   Ingredient Substitutions
-                  {!recipeData.isPro && (
+                  {!isProUser && (
                     <span className="text-xs bg-orange-100 text-orange-700 px-2 py-0.5 rounded-full font-semibold">
                       PRO
                     </span>
@@ -550,7 +554,7 @@ function RecipeContent() {
                 </p>
 
                 <ProLockedSection
-                  isPro={recipeData.isPro}
+                  isPro={isProUser}
                   lockText="Substitutions are Pro-only"
                 >
                   <div className="space-y-4">

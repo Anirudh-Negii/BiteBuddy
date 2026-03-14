@@ -23,7 +23,7 @@ const Header = async() => {
           <Image src="/logo.png" alt="BiteBuddy Logo" width={80} height={60} className="w-16" />
         </Link>
         <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-stone-600">
-          <Link href="/recipe" className="hover:text-orange-600 transition-colors flex gap-1.5 items-center" >
+          <Link href="/recipes" className="hover:text-orange-600 transition-colors flex gap-1.5 items-center" >
           <Cookie className="w-4 h-4" />My Recipes
           </Link>
           <Link href="/pantry" className="hover:text-orange-600 transition-colors flex gap-1.5 items-center" >

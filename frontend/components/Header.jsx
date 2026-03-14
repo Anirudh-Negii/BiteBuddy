@@ -8,6 +8,7 @@ import { Refrigerator, Cookie, Sparkles } from "lucide-react";
 import UserDropdown from "./UserDropdown";
 import { checkUser } from "@/lib/checkUser";
 import PricingModal from "./PricingModal";
+import HowToCookModal from "./HowToCookModal";
 
 
 
@@ -34,6 +35,7 @@ const Header = async() => {
 
         <Show when="signed-in">
           {/* have to add a how to cook button here */}
+          <HowToCookModal />
 
           {user && (
             <PricingModal subscriptionTier = {user.subscriptionTier}>

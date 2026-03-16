@@ -19,7 +19,7 @@ const Header = async() => {
   return (
     <header className="fixed top-0 w-full border-b border-stone-200 bg-stone-50/80 backdrop-blur-md z-50 supports-backdrop-filter:bg-stone-50/60">
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href={user ? "/dashboard" : "/"} className="flex items-center space-x-2">
+        <Link href={user ? "/" : "/"} className="flex items-center space-x-2">
           <Image src="/logo.png" alt="BiteBuddy Logo" width={80} height={60} className="w-16" />
         </Link>
         <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-stone-600">

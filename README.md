@@ -4,7 +4,7 @@ AI-powered pantry-to-recipe platform that helps users discover meals using ingre
 
 Scan pantry items with computer vision, generate structured recipe recommendations, browse recipes by cuisine or category, and build a personalized recipe collection.
 
----
+🔗 **Live Demo :** https://bite-buddy-henna.vercel.app
 
 ## 1. Project Overview
 

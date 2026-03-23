@@ -81,7 +81,20 @@ Saved Recipes
 1. Frontend creates/removes relations in Strapi `saved-recipes`.
 2. User-specific collection is fetched with populated recipe data.
 
-## 5. Project Structure
+## 5. Data Model
+
+BiteBuddy uses a relational content structure in Strapi to manage user pantry inventories, generated recipes, and saved collections.
+
+- A **User** can own multiple pantry items.
+- Recipes can be generated or curated and linked to users as authors.
+- Users can bookmark recipes through a saved-recipe relation.
+- Pantry items act as the primary signal for recipe recommendation workflows.
+
+This schema illustrates how core entities are connected to support AI-driven recipe discovery and personalized collections.
+
+![Data Model](./docs/DataModel.png)
+
+## 6. Project Structure
 
 ```text
 BiteBuddy/
@@ -116,7 +129,7 @@ BiteBuddy/
 - `backend/src/api/saved-recipe/content-types/saved-recipe/schema.json`
 - `backend/src/extensions/users-permissions/content-types/user/schema.json`
 
-## 6. Environment Variables Setup
+## 7. Environment Variables Setup
 
 Create local environment files in both apps before running development servers.
 
@@ -159,7 +172,7 @@ Common database-related variables (depending on selected client):
 
 Tip: Start from `backend/.env.example` and extend as needed for your database choice.
 
-## 7. Local Development Setup
+## 8. Local Development Setup
 
 ### Prerequisites
 
@@ -206,7 +219,7 @@ npm run dev
 
 Frontend runs at `http://localhost:3000` by default.
 
-## 8. Future Improvements
+## 9. Future Improvements
 
 - AI optimization: Improve prompt strategy, schema validation, and fallback handling for malformed AI outputs.
 - Caching strategy: Add server-side caching for repeated recommendation patterns and hot recipe queries.

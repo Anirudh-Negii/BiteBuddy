@@ -1,4 +1,4 @@
-# 👨‍🍳 BiteBuddy
+#  BiteBuddy
 
 AI-powered pantry-to-recipe platform that helps users discover meals using ingredients they already have.
 
